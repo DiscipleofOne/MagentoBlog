@@ -1,0 +1,33 @@
+<?php
+$_lastXBlogPosts = $this->getPostDisplayData();
+if($_lastXBlogPosts):
+    ?>
+    <div class="blog-sidebar-post-container">
+        <div class="block-title">
+            <strong>
+                <span>Blog Posts</span>
+            </strong>
+        </div>
+        <?php foreach ($_lastXBlogPosts as $blogPost) :?>
+            <a href="<?php echo $this->getViewURL($blogPost->id);?>">
+                <div class="blog-sidebar-post-id-<?php echo $blogPost->id; ?>">
+                    <div class="blog-sidebar-thumbnail">
+                        <img src="<?php echo Mage::helper('tsa_blog/images')->resizeImg($blogPost->image,50);?>"/>
+                    </div>
+                    <div class="blog-post-sidebar-info">
+                        <span  class="blog-sidebar-title">
+                            <strong><?php echo $blogPost->title?></strong>
+                        </span>
+                        <p class="blog-sidebar-content"> <?php echo $blogPost->content; ?></p>
+                    </div>
+                </div>
+            </a>
+        <?php endforeach; ?>
+        <div>
+            <a href="<?php echo $this->_getIndexURL();?>">
+                <h1>Read More!</h1>
+            </a>
+        </div>
+
+    </div>
+<?php endif;?>

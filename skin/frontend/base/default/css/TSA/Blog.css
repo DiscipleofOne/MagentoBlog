@@ -1,0 +1,264 @@
+span[class="blog-sidebar-title"] {
+    color: #3399cc;
+}
+
+
+p[class="blog-sidebar-content"] {
+    color: #636363;
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.blog-post-sidebar-info {
+    vertical-align: middle;
+    width: 70%;
+    display:inline-block;
+}
+
+.blog-sidebar-thumbnail{
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.tsa-blog-post-thumbnail{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* ============================================ *
+ * Product Grid
+ * ============================================ */
+.tsa-blog-posts-grid{
+    position: relative;
+}
+
+.tsa-blog-posts:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.tsa-blog-posts-grid> li {
+    position: relative;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.tsa-blog-posts-grid> li:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.tsa-blog-posts-grid.product-image {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.tsa-blog-posts-grid.product-image img {
+    width: 100%;
+    height: auto;
+}
+.tsa-blog-posts-grid.product-image img:hidden {
+    display: none;
+}
+
+.tsa-blog-posts-grid.tsa-blog-post-info {
+    position: relative;
+    padding-bottom: 95px;
+}
+
+.tsa-blog-posts-grid.actions {
+    padding-top: 10px;
+    position: absolute;
+    bottom: 0px;
+    min-height: 85px;
+    width: 100%;
+}
+
+.tsa-blog-posts-grid.ratings .rating-box {
+    margin: 0 auto;
+}
+
+.tsa-blog-posts-grid.ratings .amount {
+    display: none;
+}
+
+.tsa-blog-posts-grid.price-box {
+    color: #a0a0a0;
+    font-size: 13px;
+    margin: 0 0 5px;
+}
+
+.tsa-blog-posts-grid.add-to-links {
+    margin-bottom: 0;
+}
+
+/* Config: Two columns + flexible gutter */
+.tsa-blog-posts-grid> li {
+    float: left;
+    width: 47.72727%;
+    margin-right: 4.54545%;
+}
+
+.tsa-blog-posts-grid> li:nth-child(odd) {
+    clear: left;
+}
+
+.tsa-blog-posts-grid> li:nth-child(even) {
+    margin-right: 0;
+}
+
+.tsa-blog-posts-grid.product-image {
+    margin-bottom: 5px;
+}
+.tsa-blog-posts-grid.product-image:before, .tsa-blog-posts-grid.product-image:after {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+.tsa-blog-posts-grid.product-image:before {
+    background-color: white;
+    opacity: 0.8;
+    z-index: 2;
+}
+.tsa-blog-posts-grid.product-image:after {
+    background-image: url("../images/opc-ajax-loader.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 3;
+}
+.tsa-blog-posts-grid.product-image.loading {
+    position: relative;
+}
+.tsa-blog-posts-grid.product-image.loading:before, .tsa-blog-posts-grid.product-image.loading:after {
+    display: block;
+}
+
+@media only screen and (min-width: 480px) {
+    /* Config: Three columns + flexible gutter */
+    .tsa-blog-posts-grid{
+        /* Undo two-column config */
+        /* Set three-column config */
+    }
+    .tsa-blog-posts-grid> li:nth-child(odd) {
+        clear: none;
+    }
+    .tsa-blog-posts-grid> li:nth-child(even) {
+        margin-right: 3.7037%;
+    }
+    .tsa-blog-posts-grid> li {
+        width: 30.8642%;
+        margin-right: 3.7037%;
+    }
+    .tsa-blog-posts-grid> li:nth-child(3n+1) {
+        clear: left;
+    }
+    .tsa-blog-posts-grid> li:nth-child(3n) {
+        margin-right: 0;
+    }
+}
+@media only screen and (min-width: 960px) {
+    /* Config: Columns + flexible gutter */
+    /* Undo three-column config */
+    .tsa-blog-posts-grid--max-4-col > li:nth-child(odd) {
+        clear: none;
+    }
+
+    .tsa-blog-posts-grid--max-4-col > li:nth-child(3n+1) {
+        clear: none;
+    }
+
+    .tsa-blog-posts-grid--max-4-col > li:nth-child(even),
+    .tsa-blog-posts-grid--max-4-col > li:nth-child(3n) {
+        margin-right: 2.22222%;
+    }
+
+    /* Set column config */
+    .tsa-blog-posts-grid--max-4-col > li {
+        margin-right: 2.22222%;
+    }
+
+    .tsa-blog-posts-grid--max-4-col > li {
+        width: 23.33333%;
+        margin-right: 2.22222%;
+    }
+
+    .tsa-blog-posts-grid--max-4-col > li:nth-child(4n+1) {
+        clear: left;
+    }
+
+    .tsa-blog-posts-grid--max-4-col > li:nth-child(4n) {
+        margin-right: 0;
+    }
+
+    /* Config: Columns + flexible gutter */
+    /* Undo three-column config */
+    .tsa-blog-posts-grid--max-5-col > li:nth-child(odd) {
+        clear: none;
+    }
+
+    .tsa-blog-posts-grid--max-5-col > li:nth-child(3n+1) {
+        clear: none;
+    }
+
+    .tsa-blog-posts-grid--max-5-col > li:nth-child(even),
+    .tsa-blog-posts-grid--max-5-col > li:nth-child(3n) {
+        margin-right: 2.22222%;
+    }
+
+    /* Set column config */
+    .tsa-blog-posts-grid--max-5-col > li {
+        margin-right: 2.22222%;
+    }
+
+    .tsa-blog-posts-grid--max-5-col > li {
+        width: 18.22222%;
+        margin-right: 2.22222%;
+    }
+
+    .tsa-blog-posts-grid--max-5-col > li:nth-child(5n+1) {
+        clear: left;
+    }
+
+    .tsa-blog-posts-grid--max-5-col > li:nth-child(5n) {
+        margin-right: 0;
+    }
+
+    /* Config: Columns + flexible gutter */
+    /* Undo three-column config */
+    .tsa-blog-posts-grid--max-6-col > li:nth-child(odd) {
+        clear: none;
+    }
+
+    .tsa-blog-posts-grid--max-6-col > li:nth-child(3n+1) {
+        clear: none;
+    }
+
+    .tsa-blog-posts-grid--max-6-col > li:nth-child(even),
+    .tsa-blog-posts-grid--max-6-col > li:nth-child(3n) {
+        margin-right: 2.22222%;
+    }
+
+    /* Set column config */
+    .tsa-blog-posts-grid--max-6-col > li {
+        margin-right: 2.22222%;
+    }
+
+    .tsa-blog-posts-grid--max-6-col > li {
+        width: 14.81481%;
+        margin-right: 2.22222%;
+    }
+
+    .tsa-blog-posts-grid--max-6-col > li:nth-child(6n+1) {
+        clear: left;
+    }
+
+    .tsa-blog-posts-grid--max-6-col > li:nth-child(6n) {
+        margin-right: 0;
+    }
+}

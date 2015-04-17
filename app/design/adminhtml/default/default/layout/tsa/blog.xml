@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<layout>
+    <adminhtml_tsa_blog_post_index>
+        <reference name="content">
+            <block type="tsa_blog/adminhtml_post" name="tsa_blog_post_page"></block>
+        </reference>
+    </adminhtml_tsa_blog_post_index>
+
+    <adminhtml_tsa_blog_post_new>
+        <update handle="adminhtml_tsa_blog_post_edit" />
+    </adminhtml_tsa_blog_post_new>
+
+    <adminhtml_tsa_blog_post_edit>
+        <update handle="editor"/>
+        <reference name="content">
+            <block type="tsa_blog/adminhtml_post_edit" name="tsa_blog_post_edit"></block>
+        </reference>
+        <reference name="left">
+            <block type="tsa_blog/adminhtml_post_edit_tabs" name="tsa_blog_post_edit_tabs">
+                <block type="tsa_blog/adminhtml_post_edit_tab_main" name="tsa_blog_post_tab_main" />
+                <block type="tsa_blog/adminhtml_post_edit_tab_content" name="tsa_blog_post_edit_tab_content" />
+                <action method="addTab"><name>main_section</name><block>tsa_blog_post_tab_main</block></action>
+                <action method="addTab"><name>content_section</name><block>tsa_blog_post_edit_tab_content</block></action>
+            </block>
+        </reference>
+    </adminhtml_tsa_blog_post_edit>
+
+
+    <adminhtml_tsa_blog_wysiwyg_images_index>
+        <remove name="footer" />
+        <remove name="head" />
+        <reference name="left">
+            <block name="wysiwyg_images.js" type="tsa_blog/adminhtml_wysiwyg_images_content" template="tsa/browser/js.phtml" />
+            <block name="wysiwyg_images.tree" type="tsa_blog/adminhtml_wysiwyg_images_tree" template="tsa/browser/tree.phtml" />
+        </reference>
+        <reference name="content">
+            <block name="wysiwyg_images.content"  type="tsa_blog/adminhtml_wysiwyg_images_content" template="tsa/browser/content.phtml">
+                <block name="wysiwyg_images.uploader" type="tsa_blog/adminhtml_wysiwyg_images_content_uploader" template="tsa/browser/content/uploader.phtml" />
+                <block name="wysiwyg_images.newfolder" type="tsa_blog/adminhtml_wysiwyg_images_content_newfolder" template="tsa/browser/content/newfolder.phtml" />
+            </block>
+        </reference>
+    </adminhtml_tsa_blog_wysiwyg_images_index>
+
+    <adminhtml_tsa_blog_wysiwyg_images_contents>
+        <block name="wysiwyg_images.files" type="tsa_blog/adminhtml_wysiwyg_images_content_files" template="tsa/browser/content/files.phtml" output="toHtml" />
+    </adminhtml_tsa_blog_wysiwyg_images_contents>
+</layout>

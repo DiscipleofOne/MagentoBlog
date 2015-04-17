@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <catalog_category_view>
+        <update handle="tsa_blog_sidebar"/>
+        <update handle="tsa_blog_post_css"/>
+    </catalog_category_view>
+
+    <tsa_blog_post_view>
+        <update handle="tsa_blog_sidebar"/>
+        <reference name="root">
+            <action method="setTemplate"><template>page/2columns-right.phtml</template></action>
+        </reference>
+        <reference name="content">
+            <block type="tsa_blog/post_view" name="tsa.blog.post.view" template="tsa/blog/post/view.phtml"/>
+            <block type="tsa_blog/comment_new" name="tsa.blog.comment.new" template="tsa/blog/comment/new.phtml"/>
+            <block type="tsa_blog/comment" name="tsa.blog.comment.view" template="tsa/blog/comment/view.phtml"/>
+        </reference>
+        <update handle="tsa_blog_post_css"/>
+
+
+
+    </tsa_blog_post_view>
+
+
+
+    <tsa_blog_post_index>
+        <reference name="root">
+            <action method="setTemplate"><template>page/2columns-right.phtml</template></action>
+        </reference>
+        <reference name="content">
+            <block type="tsa_blog/post_index" name="tsa.blog.post.index"/>
+        </reference>
+        <reference name="right">
+            <update handle="tsa_blog_sidebar"/>
+        </reference>
+        <update handle="tsa_blog_post_css"/>
+
+    </tsa_blog_post_index>
+
+
+
+    <tsa_blog_sidebar>
+        <reference name="right">
+            <block type="tsa_blog/post" name="tsa.blog.post.sidebar" template="tsa/blog/post/sidebar.phtml"/>
+        </reference>
+    </tsa_blog_sidebar>
+
+    <tsa_blog_post_css>
+        <reference name="head">
+            <action method="addItem">
+                <type>skin_css</type>
+                <name>css/TSA/Blog.css</name>
+            </action>
+        </reference>
+    </tsa_blog_post_css>
+</layout>

@@ -1,0 +1,24 @@
+<?php
+    $_blogPostCollection = $this->getBlogPostCollection();
+?>
+
+<div class="tsa-blog-post-view">
+    <div class="tsa-blog-posts">
+            <ul class="tsa-blog-posts-grid tsa-blog-posts-grid--max-4-col first last odd">
+                <?php foreach ($_blogPostCollection as $blogPost): ?>
+                        <li class="item last">
+                            <a href="<?php echo $this->getPostViewUrl($blogPost);?>">
+                            <div class="tsa-blog-post-info">
+                                <img class="tsa-blog-post-thumbnail" src=" <?php echo $this->getImageURL($blogPost);?>" />
+                                <h2><?php echo $this->getPostTitle($blogPost);?></h2>
+                                <h3><?php echo $this->getPostPublishDate($blogPost);?></h3>
+                                <?php echo $this->getPostContent($blogPost) ?>
+                            </div>
+                            </a>
+                        </li>
+                    </a>
+                <?php endforeach;?>
+            </ul>
+            <script type="text/javascript">decorateGeneric($$('ul.tsa-blog-posts-grid'), ['odd','even','first','last'])</script>
+    </div>
+</div>
